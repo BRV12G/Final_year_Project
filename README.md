@@ -11,6 +11,13 @@
 
 ## TechStack 
 
+## Team
+### Project Guide - Ramita Karpe
+### Team Members
+#### 1.Bhairavi Gawas
+#### 2.Prajay Sawant
+#### 3.Willora da Costa
+#### 4.Kushi Anjum
 
 
 
