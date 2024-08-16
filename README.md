@@ -6,6 +6,7 @@
 #### 3. reduce the features of lifestyle,mental health and send the updated synopsis to ma'am 
 #### 4. research on google fit api and search how to download it.[(chatgpt-research about data)](https://chatgpt.com/share/626ff944-d587-43de-b963-20855c50fd7c)
 #### 5.make ppt for the review
+#### 6. finalise the title of the project
 
 
 
