@@ -7,6 +7,7 @@ export default function Goaltracking() {
             <p>Water Tracker</p>
             <p>Steps walked</p>
             <p>sleep</p>
+            <p>hi</p>
             <p>extra activities</p>
         </div>
       <Link href="/">
