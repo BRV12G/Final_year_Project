@@ -29,6 +29,11 @@ const Navbar = () => {
             Chatbot
           </Link>
         </li>
+        <li>
+          <Link href="/profile" className="hover:underline">
+            Profile
+          </Link>
+        </li>
       </ul>
     </nav>
   );
