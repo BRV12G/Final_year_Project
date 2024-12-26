@@ -10,13 +10,23 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/login" className="hover:underline">
-            Login
+          <Link href="/diet" className="hover:underline">
+            Diet
           </Link>
         </li>
         <li>
-          <Link href="/signup" className="hover:underline">
-            Sign Up
+          <Link href="/fitness" className="hover:underline">
+            Fitness
+          </Link>
+        </li>
+        <li>
+          <Link href="/fitness" className="hover:underline">
+            Goaltracking
+          </Link>
+        </li>
+        <li>
+          <Link href="/fitness" className="hover:underline">
+            Chatbot
           </Link>
         </li>
       </ul>
