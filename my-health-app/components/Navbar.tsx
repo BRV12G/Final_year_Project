@@ -20,7 +20,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/fitness" className="hover:underline">
+          <Link href="/goaltracking" className="hover:underline">
             Goaltracking
           </Link>
         </li>
