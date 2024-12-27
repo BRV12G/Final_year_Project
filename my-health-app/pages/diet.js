@@ -102,7 +102,7 @@ const DietReport = () => {
         </div>
 
         {/* Footer Button */}
-        <Link href="/food_options">
+        <Link href="/meal">
         <button className="mt-10 px-6 py-3 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
           See Food Options
         </button></Link>
