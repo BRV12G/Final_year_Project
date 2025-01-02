@@ -1,36 +1,28 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { NextApiRequest, NextApiResponse } from "next";
 
-// Mock database (replace with actual database query)
 const users = [
-  { username: "testuser", email: "test@example.com", password: "$2a$10$9v4RxDHTDQ5OVMb7mI5KfK8Wqq.bfiI5vQxdX6kr9VvBs1Xh/xaii" } // password is "password123"
+  { username: "user1", password: bcrypt.hashSync("password1", 10) },
+  { username: "user2", password: bcrypt.hashSync("password2", 10) },
 ];
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+export default function handler(req, res) {
   if (req.method === "POST") {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
-    // Find the user by email
-    const user = users.find(user => user.email === email);
+    const user = users.find((u) => u.username === username);
     if (!user) {
-      return res.status(400).json({ error: "Invalid email or password" });
+      return res.status(401).json({ message: "Invalid username or password" });
     }
 
-    // Check if the password is correct
-    const isPasswordCorrect = await bcrypt.compare(password, user.password);
-    if (!isPasswordCorrect) {
-      return res.status(400).json({ error: "Invalid email or password" });
+    const isPasswordValid = bcrypt.compareSync(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "Invalid username or password" });
     }
 
-    // Generate a JWT token
-    const token = jwt.sign({ email: user.email, username: user.username }, "secret_key", { expiresIn: "1h" });
-
-    // Respond with the token
-    return res.status(200).json({ message: "Login successful", token });
+    const token = jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    res.status(200).json({ token });
+  } else {
+    res.status(405).json({ message: "Method not allowed" });
   }
-
-  return res.status(405).json({ error: "Method Not Allowed" });
-};
-
-export default handler;
+}
